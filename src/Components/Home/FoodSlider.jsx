@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-console.log(motion)
-
 const testimonials = [
   {
     id: 1,
