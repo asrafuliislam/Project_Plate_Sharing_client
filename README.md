@@ -1,16 +1,67 @@
-# React + Vite
+## 📦 Plate Sharing – Food Donation & Sharing Platform
+A MERN-based web application that allows users to donate extra food, request food, and reduce food waste through an easy, modern interface.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Overview
+Plate Sharing is a community-driven food sharing system where users can:
+=> Donate leftover or extra food
+=> Request food from nearby donors
+=> Manage their food items
+=> Track donation status
+=> Reduce food waste while helping those in need
+=> This platform connects donors and receivers and promotes a sustainable environment.
 
-Currently, two official plugins are available:
+# Key Features
+## Food Donation
+=> Users can donate any extra food
+=> Add images, quantity, pickup location, and expiry time
+=> Donations appear on the main “Available Foods” page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📥 Request Food
+=> Users can request foods posted by other donors
+=> Donors can Accept/Reject requests
+=> Real-time update in database
 
-## React Compiler
+👤 User Dashboard
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Includes:
+=> My Foods
+=> My Requests
+=> Request Management
+=> Edit/Delete food items
+=> Hero Banner (My Foods Page)
+=> Personalized greeting
+=> Thanks message for donating
+=> User profile image
+=> Add Food button
+=> Modern right-side preview image
 
-## Expanding the ESLint configuration
+🔐 Authentication
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+=> Login / Register with Firebase (optional: social login)
+=> Private Routes for dashboard
+
+
+## Tech Stack
+
+# Frontend:
+=> React.js,React Router,Tailwind CSS,DaisyUI,Firebase Auth.
+
+# Backend:
+=> Node.js,Express.js,MongoDB Atlas.
+
+# Tools:
+=> Vite,SweetAlert2.
+
+# The main goal of Plate Sharing is to:
+
+=> Reduce food waste
+=> Help people in need
+=> Build a sharing community
+=> Promote sustainable living
+
+### Author
+Asraful Islam
+Plate Sharing – 2025
+
+## License
+This project is open-source and free to use.
