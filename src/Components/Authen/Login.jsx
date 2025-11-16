@@ -19,7 +19,7 @@ const Login = () => {
             .then(res => {
                 navigate(from, { replace: true });
                 const userEmail = { email: res.user.email };
-                fetch('http://localhost:3000/users', {
+                fetch('https://community-food-sharing-server-azure.vercel.app/users', {
                     method: 'POST',
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(userEmail)
@@ -38,7 +38,7 @@ const Login = () => {
                     email: result.user.email,
                     image: result.user.photoURL,
                 };
-                fetch('http://localhost:3000/users', {
+                fetch('https://community-food-sharing-server-azure.vercel.app/users', {
                     method: 'POST',
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(newUser)

@@ -1,8 +1,16 @@
-import React, { use } from "react";
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from "react-router";
 
-const RecentFood = ({ recentProductsPromise }) => {
-    const foods = use(recentProductsPromise);
+const RecentFood = () => {
+    const [foods, setFoods] = useState([]);
+
+    useEffect(() => {
+        fetch('https://community-food-sharing-server-azure.vercel.app/latest-food')
+            .then(res => res.json())
+            .then(data => setFoods(data))
+            .catch(err => console.error(err));
+    }, []);
+
 
     return (
         <div className="my-10 px-6 max-w-7xl mx-auto">

@@ -28,7 +28,7 @@
 //             req_number: e.target.contactNo.value,
 //             status: "pending",
 //         };
-//         fetch("http://localhost:3000/request_food", {
+//         fetch("https://community-food-sharing-server-azure.vercel.app/request_food", {
 //             method: "POST",
 //             headers: { "Content-Type": "application/json" },
 //             body: JSON.stringify(newReq)
@@ -45,13 +45,13 @@
 //     };
 
 //     useEffect(() => {
-//         fetch(`http://localhost:3000/foods/request_food/${_id}`)
+//         fetch(`https://community-food-sharing-server-azure.vercel.app/foods/request_food/${_id}`)
 //             .then(res => res.json())
 //             .then(data => setReq(data));
 //     }, [_id]);
 
 //     const handleAccept = (reqId) => {
-//         fetch(`http://localhost:3000/request_food/accept/${reqId}`, { method: 'PATCH' })
+//         fetch(`https://community-food-sharing-server-azure.vercel.app/request_food/accept/${reqId}`, { method: 'PATCH' })
 //             .then(res => res.json())
 //             .then(data => {
 //                 if (data.success) {
@@ -62,7 +62,7 @@
 //     };
 
 //     const handleReject = (reqId) => {
-//         fetch(`http://localhost:3000/request_food/reject/${reqId}`, { method: 'PATCH' })
+//         fetch(`https://community-food-sharing-server-azure.vercel.app/request_food/reject/${reqId}`, { method: 'PATCH' })
 //             .then(res => res.json())
 //             .then(data => {
 //                 if (data.success) {
@@ -207,7 +207,7 @@ const FoodDetails = () => {
             req_number: e.target.contactNo.value,
             status: "pending",
         };
-        fetch("http://localhost:3000/request_food", {
+        fetch("https://community-food-sharing-server-azure.vercel.app/request_food", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newReq)
@@ -224,13 +224,13 @@ const FoodDetails = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:3000/foods/request_food/${_id}`)
+        fetch(`https://community-food-sharing-server-azure.vercel.app/foods/request_food/${_id}`)
             .then(res => res.json())
             .then(data => setReq(data));
     }, [_id]);
 
     const handleAccept = (reqId) => {
-        fetch(`http://localhost:3000/request_food/accept/${reqId}`, { method: 'PATCH' })
+        fetch(`https://community-food-sharing-server-azure.vercel.app/request_food/accept/${reqId}`, { method: 'PATCH' })
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -242,7 +242,7 @@ const FoodDetails = () => {
     };
 
     const handleReject = (reqId) => {
-        fetch(`http://localhost:3000/request_food/reject/${reqId}`, { method: 'PATCH' })
+        fetch(`https://community-food-sharing-server-azure.vercel.app/request_food/reject/${reqId}`, { method: 'PATCH' })
             .then(res => res.json())
             .then(data => {
                 if (data.success) {

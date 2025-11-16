@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/availableFoods',
-        loader: () => fetch('http://localhost:3000/foods'),
+        loader: () => fetch('https://community-food-sharing-server-azure.vercel.app/foods'),
         element: (
           <Suspense fallback={<LoadingSpinner />}>
             <AvailableFoods />
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/foodDetails/:id',
-        loader: ({ params }) => fetch(`http://localhost:3000/foodsDetails/${params.id}`),
+        loader: ({ params }) => fetch(`https://community-food-sharing-server-azure.vercel.app/foodsDetails/${params.id}`),
         element: <PrivateRouter><FoodDetails /></PrivateRouter>,
       },
       {

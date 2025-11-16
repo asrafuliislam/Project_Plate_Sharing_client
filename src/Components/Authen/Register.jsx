@@ -16,7 +16,7 @@ const Register = () => {
         createUser(email, password)
             .then(() => {
                 const newUser = { name, email, image: photoURL };
-                fetch('http://localhost:3000/users', {
+                fetch('https://community-food-sharing-server-azure.vercel.app/users', {
                     method: 'POST',
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(newUser),
@@ -35,7 +35,7 @@ const Register = () => {
                     email: result.user.email,
                     image: result.user.photoURL,
                 };
-                fetch('http://localhost:3000/users', {
+                fetch('https://community-food-sharing-server-azure.vercel.app/users', {
                     method: 'POST',
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(newUser)

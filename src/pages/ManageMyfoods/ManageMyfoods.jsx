@@ -11,7 +11,7 @@ const ManageMyfoods = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:3000/foods?email=${user.email}`)
+            fetch(`https://community-food-sharing-server-azure.vercel.app/foods?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setMyFoods(data));
         }
@@ -21,7 +21,6 @@ const ManageMyfoods = () => {
         setFoodToEdit(food);
         editModalRef.current.showModal();
     };
-
     const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -30,7 +29,7 @@ const ManageMyfoods = () => {
             showCancelButton: true,
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/foods/${id}`, {
+                fetch(`https://community-food-sharing-server-azure.vercel.app/foods/${id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())
@@ -44,8 +43,6 @@ const ManageMyfoods = () => {
             }
         });
     };
-
-
     const handleEditSubmit = (e) => {
         e.preventDefault();
 
@@ -55,7 +52,7 @@ const ManageMyfoods = () => {
             additional_notes: e.target.additional_notes.value,
         };
 
-        fetch(`http://localhost:3000/foods/${foodToEdit._id}`, {
+        fetch(`https://community-food-sharing-server-azure.vercel.app/foods/${foodToEdit._id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updatedFood),

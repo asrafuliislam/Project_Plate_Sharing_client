@@ -25,7 +25,7 @@ const AddFood = forwardRef((props, ref) => {
             food_status: "Available"
         };
 
-        fetch("http://localhost:3000/foods", {
+        fetch("https://community-food-sharing-server-azure.vercel.app/foods", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(newFood),

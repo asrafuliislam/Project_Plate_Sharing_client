@@ -8,7 +8,7 @@ const MyRequest = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:3000/request_food?email=${user.email}`)
+            fetch(`https://community-food-sharing-server-azure.vercel.app/request_food?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setReq(data));
         }
@@ -25,7 +25,7 @@ const MyRequest = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/request_food/${_id}`, {
+                fetch(`https://community-food-sharing-server-azure.vercel.app/request_food/${_id}`, {
                     method: 'DELETE',
                 })
                 .then(res => res.json())
