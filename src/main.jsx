@@ -64,7 +64,7 @@ const router = createBrowserRouter([
         Component: Register
       },
       {
-        path: '*',
+        path: '/*',
         Component: NotFoundPage,
       },
     ]
