@@ -1,12 +1,12 @@
-import React, { use, useEffect, useState, useRef } from 'react';
-import { AuthContext } from '../../Contexts/AuthContext';
+import React, { useEffect, useState, useRef } from 'react';
 import Swal from 'sweetalert2';
 import MyFoodsBanner from './MyFoodsBanner';
+import UseAuth from '../../hooks/UseAuth';
 
 const ManageMyfoods = () => {
     const [myFoods, setMyFoods] = useState([]);
     const [foodToEdit, setFoodToEdit] = useState(null);
-    const { user } = use(AuthContext);
+    const { user } = UseAuth();
     const editModalRef = useRef(null);
 
     useEffect(() => {

@@ -17,6 +17,7 @@ import MyRequest from './pages/MyRequest/MyRequest.jsx'
 import PrivateRouter from './Contexts/PrivateRouter.jsx'
 import LoadingSpinner from './Components/LoadingSpinner.jsx'
 import AddFoodPage from './pages/AddFood/AddFoodspage.jsx'
+import NotFoundPage from './pages/NotFoundPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         Component: Register
+      },
+      {
+        path: '*',
+        Component: NotFoundPage,
       },
     ]
   }

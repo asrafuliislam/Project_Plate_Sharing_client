@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
 import Swal from 'sweetalert2';
+import UseAuth from '../../hooks/UseAuth';
 
 const MyRequest = () => {
-    const { user } = useContext(AuthContext);
+    const { user } = UseAuth();;
     const [req, setReq] = useState([]);
 
     useEffect(() => {

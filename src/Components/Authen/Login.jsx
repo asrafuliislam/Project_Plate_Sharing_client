@@ -1,11 +1,12 @@
-import React, { use } from 'react';
+import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
-import { AuthContext } from '../../Contexts/AuthContext';
 import GoogleIcon from '../../assets/icons8-google-48.png'
+import UseAuth from '../../hooks/UseAuth';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Login = () => {
-    const { signInWithGoogle, signInUser } = use(AuthContext);
+    const { signInWithGoogle, signInUser } = UseAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -24,8 +25,10 @@ const Login = () => {
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(userEmail)
                 });
+                toast.success('Sign in  successful! 🎉');
             })
             .catch(err => console.log(err));
+            toast.error('Sign in failed. Try again.')
     };
 
     const handleGoogleSignIn = (e) => {
@@ -50,7 +53,7 @@ const Login = () => {
     return (
         <div className=" min-h-screen  flex items-center justify-center p-4">
             <div className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden">
-                
+
                 {/* Header */}
                 <div className="btn-primary text-white p-8 text-center">
                     <h1 className="text-4xl font-bold mb-2">Welcome Back!</h1>
@@ -59,7 +62,7 @@ const Login = () => {
 
                 {/* Form */}
                 <form onSubmit={handleLogin} className="p-8 space-y-6">
-                    
+
                     {/* Email */}
                     <div>
                         <label className="block text-gray-700 font-semibold mb-1">Email</label>
@@ -92,9 +95,9 @@ const Login = () => {
                         Sign In
                     </button>
                     <div className="flex items-center">
-                        <hr className="flex-1 border-gray-300"/>
+                        <hr className="flex-1 border-gray-300" />
                         <span className="px-3 text-gray-500 text-sm">OR</span>
-                        <hr className="flex-1 border-gray-300"/>
+                        <hr className="flex-1 border-gray-300" />
                     </div>
 
                     {/* Google Sign In */}
@@ -112,6 +115,17 @@ const Login = () => {
                     </p>
                 </form>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     );
 };

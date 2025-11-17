@@ -1,11 +1,13 @@
-import React, { useState, useContext, forwardRef } from 'react';
+import React, { useState, forwardRef } from 'react';
 import Swal from "sweetalert2";
-import { AuthContext } from "../../Contexts/AuthContext";
 import { FaLeaf, FaImage, FaUser } from "react-icons/fa6";
+import UseAuth from '../../hooks/UseAuth';
 
 const AddFood = forwardRef((props, ref) => {
-    const { user } = useContext(AuthContext);  
+    const { user } = UseAuth();;  
+    console.log(user);
     const [loading, setLoading] = useState(false);
+
 
     const handleAddFood = (e) => {
         e.preventDefault();
